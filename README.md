@@ -1,2 +1,4 @@
 # BD
-projeto de bd
+Enunciado do projeto de BD:
+
+
