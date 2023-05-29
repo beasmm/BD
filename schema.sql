@@ -46,6 +46,7 @@ create table places
 create table sale
 (
     order_no numeric(16, 0) not null unique,
+    constraint pk_sale primary key (order_no),
     constraint fk_sale_order foreign key (order_no) references orders (order_no)
 );
 
@@ -55,12 +56,12 @@ create table pay
     order_no numeric(16, 0) not null unique,
     constraint pk_pay primary key (order_no),
     constraint fk_places_costumer foreign key (cust_no) references customer (cust_no),
-    constraint fk_places_orders foreign key (order_no) references orders (order_no)
+    constraint fk_places_sales foreign key (order_no) references sales (order_no)
 );
 
 create table employee
 (
-    ssn numeric(9, 0) unique,
+    ssn numeric(9, 0) not null unique,
     TIN numeric(16, 0) not null unique,
     bdate date not null,
     name varchar(80) not null,
