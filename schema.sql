@@ -60,7 +60,7 @@ create table pay
 
 create table employee
 (
-    ssn numeric(16, 0) unique,
+    ssn numeric(9, 0) unique,
     TIN numeric(16, 0) not null unique,
     bdate date,
     name varchar(80),
@@ -118,7 +118,7 @@ create table product
     sku varchar(15) unique,
     name varchar(80),
     description varchar(80),
-    price numeric(16, 4),
+    price numeric(16, 2),
     constraint pk_product primary key (sku)
 );
 
