@@ -61,11 +61,11 @@ INSERT INTO department VALUES ('Human Resources');
 INSERT INTO department VALUES ('Research and Development');
 INSERT INTO department VALUES ('Accounting');
 
-INSERT INTO workplace VALUES ('676 Elm St', 41.600075, -70.958042, (41.600075, -70.958042));
-INSERT INTO workplace VALUES ('144 Main St', 40.850920, -73.967637, (40.850920, -73.967637));
-INSERT INTO workplace VALUES ('123 Oak Ave', 40.565407, -74.1249428, (40.565407, -74.1249428));
-INSERT INTO workplace VALUES ('987 Maple Rd', 41.069706, -74.380989, (41.069706, -74.380989));
-INSERT INTO workplace VALUES ('6 Pine Ln', 40.655135, -73.702898, (40.655135, -73.702898));
+INSERT INTO workplace VALUES ('676 Elm St', 41.600075, -70.958042,);
+INSERT INTO workplace VALUES ('144 Main St', 40.850920, -73.967637,);
+INSERT INTO workplace VALUES ('123 Oak Ave', 40.565407, -74.1249428,);
+INSERT INTO workplace VALUES ('987 Maple Rd', 41.069706, -74.380989,);
+INSERT INTO workplace VALUES ('6 Pine Ln', 40.655135, -73.702898,);
 
 INSERT INTO works VALUES (111221111, 'Human Resources', '144 Main St');
 INSERT INTO works VALUES (222332222, 'Sales', '676 Elm St');
@@ -150,11 +150,11 @@ INSERT INTO contains VALUES (9, 'FOG-MCH-LRG-90', 1);
 INSERT INTO contains VALUES (10, 'CUP-PAP-BLU-10', 2);
 
 
-INSERT INTO supplier VALUES (0000000001, 'Papier Makier', '1234 Papier Street');
-INSERT INTO supplier VALUES (0000000002, 'Bubble POP!', '12 Michael Buble Avenue');
-INSERT INTO supplier VALUES (0000000003, 'HE HE!', '7 Michael Jackson Avenue');
-INSERT INTO supplier VALUES (0000000004, 'Pinata Central', '321 Party Street');
-INSERT INTO supplier VALUES (0000000005, 'PONG IT', '4 Pongo Street');
+INSERT INTO supplier VALUES (0000000001, 'Papier Makier', '2022-11-25');
+INSERT INTO supplier VALUES (0000000002, 'Bubble POP!', '2022-10-22');
+INSERT INTO supplier VALUES (0000000003, 'HE HE!', '2023-02-25');
+INSERT INTO supplier VALUES (0000000004, 'Pinata Central', '2023-03-10');
+INSERT INTO supplier VALUES (0000000005, 'PONG IT', '2023-04-13');
 
 INSERT INTO supply_contract VALUES (0000000003, 'HEL-CAN-XXL-90', '7 Michael Jackson Avenue');
 INSERT INTO supply_contract VALUES (0000000002, 'BUB-MCH-LRG-75', '12 Michael Buble Avenue'); 
