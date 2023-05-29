@@ -117,7 +117,7 @@ create table product
 (
     sku numeric(16, 0) unique,
     name varchar(80),
-    description varchar(80),
+    description varchar(150),
     price numeric(16, 4),
     constraint pk_product primary key (sku)
 );
