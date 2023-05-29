@@ -36,7 +36,7 @@ create table orders
 
 create table places
 (
-    cust_no numeric(16, 0) not null unique, 
+    cust_no numeric(16, 0) not null, 
     order_no numeric(16, 0) not null unique,
     constraint pk_places primary key (order_no),
     constraint fk_places_costumer foreign key (cust_no) references customer (cust_no),
@@ -69,7 +69,7 @@ create table employee
 
 create table process
 (
-    ssn numeric(16, 0) not null unique,
+    ssn numeric(16, 0) not null,
     order_no numeric(16, 0) not null unique,
     constraint pk_process primary key (order_no),
     constraint fk_process_employee foreign key (ssn) references employee (ssn),
