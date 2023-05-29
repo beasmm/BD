@@ -1,3 +1,6 @@
+%%sql
+-- populate.sql
+
 INSERT INTO customer VALUES (1, 'John Smith', 'johnsmith@mail.com', 234567890, '123 Main St');
 INSERT INTO customer VALUES (2, 'Alice Johnson', 'alicejohnson@mail.com', 987654321, '456 Elm St');
 INSERT INTO customer VALUES (3, 'Michael Brown', 'michaelbrown@mail.com', 551234567, '789 Oak Ave');
@@ -10,7 +13,7 @@ INSERT INTO customer VALUES (9, 'James Thomas', 'jamesthomas@mail.com',444777111
 INSERT INTO customer VALUES (10, 'Isabella Clark', 'isabellaclark@mail.com', 999888777, '258 Oakwood Dr');
 
 INSERT INTO orders VALUES (1, '2022-12-20');
-INSERT INTO orders VALUES (2, '2022-12-22');
+INSERT INTO orders VALUES (2, '2023-12-22');
 INSERT INTO orders VALUES (3, '2022-12-24');
 INSERT INTO orders VALUES (4, '2022-12-31');
 INSERT INTO orders VALUES (5, '2023-02-27');
@@ -21,7 +24,7 @@ INSERT INTO orders VALUES (9, '2023-05-09');
 INSERT INTO orders VALUES (10, '2023-05-10');
 
 INSERT INTO places VALUES (1, 5);
-INSERT INTO places VALUES (2, 3);
+INSERT INTO places VALUES (2, 2);
 INSERT INTO places VALUES (3, 4);
 INSERT INTO places VALUES (4, 6);
 INSERT INTO places VALUES (5, 9);
