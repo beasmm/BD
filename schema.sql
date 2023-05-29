@@ -125,7 +125,7 @@ create table product
 create table contains
 (
     order_no numeric(16, 0) not null unique,
-    sku varchar(15) not null unique,
+    sku varchar(15) not null,
     qty numeric(16, 0) not null ,
     constraint fk_contains_orders foreign key (order_no) references orders (order_no),
     constraint fk_contains_product foreign key (sku) references product (sku)
@@ -151,8 +151,8 @@ create table supply_contract
 create table delivery
 (
     address varchar(80) not null,
-    sku varchar(15) not null unique,
-    TIN numeric(16, 0) not null unique,
+    sku varchar(15) not null,
+    TIN numeric(16, 0) not null,
     constraint fk_delivery_supplier foreign key (TIN) references supplier (TIN),
     constraint fk_delivery_workplace foreign key (address) references workplace (address),
     constraint fk_delivery_product foreign key (sku) references product (sku)
