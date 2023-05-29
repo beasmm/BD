@@ -22,7 +22,7 @@ create table customer
     cust_no numeric(16, 0) unique,
     name varchar(30) not null,
     email varchar(30) not null unique,
-    phone numeric(16, 4) not null,
+    phone numeric(16, 0) not null,
     address varchar(80) not null,
     constraint pk_customer primary key (cust_no)
 );
@@ -115,9 +115,9 @@ create table warehouse
 
 create table product
 (
-    sku numeric(16, 0) unique,
+    sku varchar(15) unique,
     name varchar(80),
-    description varchar(150),
+    description varchar(80),
     price numeric(16, 4),
     constraint pk_product primary key (sku)
 );
@@ -125,7 +125,7 @@ create table product
 create table contains
 (
     order_no numeric(16, 0) unique,
-    sku numeric(16, 0) unique,
+    sku varchar(15) unique,
     qty numeric(16, 0),
     constraint fk_contains_orders foreign key (order_no) references orders (order_no),
     constraint fk_contains_product foreign key (sku) references product (sku)
@@ -142,7 +142,7 @@ create table supplier
 create table supply_contract
 (
     TIN numeric(16, 0) unique,
-    sku numeric(16, 0) unique,
+    sku varchar(15) unique,
     address varchar(80),
     constraint fk_supply_contract_supplier foreign key (TIN) references supplier (TIN),
     constraint fk_supply_contract_product foreign key (sku) references product (sku),
@@ -152,7 +152,7 @@ create table supply_contract
 create table delivery
 (
     address varchar(80),
-    sku numeric(16, 0) unique,
+    sku varchar(15) unique,
     TIN numeric(16, 0) unique,
     constraint fk_delivery_supplier foreign key (TIN) references supplier (TIN),
     constraint fk_delivery_workplace foreign key (address) references workplace (address),
@@ -161,6 +161,6 @@ create table delivery
 
 create table EAN_product 
 (
-    sku numeric(16, 0) unique,
+    sku varchar(15) unique,
     constraint fk_EAN_product_product foreign key (sku) references product (sku)
 );
