@@ -56,7 +56,7 @@ create table pay
     order_no numeric(16, 0) not null unique,
     constraint pk_pay primary key (order_no),
     constraint fk_places_costumer foreign key (cust_no) references customer (cust_no),
-    constraint fk_places_sales foreign key (order_no) references sales (order_no)
+    constraint fk_places_sale foreign key (order_no) references sale (order_no)
 );
 
 create table employee
@@ -118,7 +118,7 @@ create table product
 (
     sku varchar(15) not null unique,
     name varchar(80) not null,
-    description varchar(80) not null,
+    description varchar(150) not null,
     price numeric(16, 2) not null,
     constraint pk_product primary key (sku)
 );
@@ -142,8 +142,8 @@ create table supplier
 
 create table supply_contract
 (
-    TIN numeric(16, 0) not null unique,
-    sku varchar(15) not null unique,
+    TIN numeric(16, 0) not null,
+    sku varchar(15) not null,
     sp_date date not null,
     constraint fk_supply_contract_supplier foreign key (TIN) references supplier (TIN),
     constraint fk_supply_contract_product foreign key (sku) references product (sku)
