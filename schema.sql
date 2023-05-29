@@ -86,6 +86,7 @@ create table workplace
     address varchar(80) not null unique,
     lat double precision,
     long double precision,
+    unique (lat, long),
     constraint pk_workplace primary key (address)
 );
 
