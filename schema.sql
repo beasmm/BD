@@ -39,8 +39,8 @@ create table places
     cust_no numeric(16, 0) unique, 
     order_no numeric(16, 0) unique,
     constraint pk_places primary key (order_no),
-    constraint fk_places_costumer foreign key (cust_no) reference customer (cust_no),
-    constraint fk_places_orders foreign key (order_no) reference orders (order_no)
+    constraint fk_places_costumer foreign key (cust_no) references customer (cust_no),
+    constraint fk_places_orders foreign key (order_no) references orders (order_no)
 );
 
 create table sale
@@ -53,9 +53,9 @@ create table pay
 (
     cust_no numeric(16,0) unique, 
     order_no numeric(16, 0) unique,
-    constraint pk_places primary key (order_no),
-    constraint fk_places_costumer foreign key (cust_no) reference customer (cust_no),
-    constraint fk_places_orders foreign key (order_no) reference orders (order_no)
+    constraint pk_pay primary key (order_no),
+    constraint fk_places_costumer foreign key (cust_no) references customer (cust_no),
+    constraint fk_places_orders foreign key (order_no) references orders (order_no)
 );
 
 create table employee
@@ -71,8 +71,8 @@ create table process
 (
     ssn numeric(16, 0) unique,
     order_no numeric(16, 0) unique,
-    constraint fk_process_employee foreign key (ssn) reference employee (employee),
-    constraint fk_process_orders foreign key (order_no) reference orders (order_no)
+    constraint fk_process_employee foreign key (ssn) references employee (ssn),
+    constraint fk_process_orders foreign key (order_no) references orders (order_no)
 );
 
 create table department
@@ -95,22 +95,22 @@ create table works
     ssn numeric(16, 0) unique,
     name varchar(80),
     address varchar(80),
-    constraint fk_works_employee foreign key (ssn) reference employee (employee),
-    constraint fk_works_department foreign key (name) reference department (name),
-    constraint fk_works_workplace foreign key (address) reference workplace (address)
+    constraint fk_works_employee foreign key (ssn) references employee (ssn),
+    constraint fk_works_department foreign key (name) references department (name),
+    constraint fk_works_workplace foreign key (address) references workplace (address)
 );
 
 
 create table office
 (
     address varchar(80) not null unique,
-    constraint fk_office_workplace foreign key (address) reference workplace (address)
+    constraint fk_office_workplace foreign key (address) references workplace (address)
 );
 
 create table warehouse
 (
     address varchar(80) not null unique,
-    constraint fk_warehouse_workplace foreign key (address) reference workplace (address)
+    constraint fk_warehouse_workplace foreign key (address) references workplace (address)
 );
 
 create table product
@@ -127,8 +127,8 @@ create table contains
     order_no numeric(16, 0) unique,
     sku numeric(16, 0) unique,
     qty numeric(16, 0),
-    constraint fk_contains_orders foreign key (order_no) reference orders (order_no),
-    constraint fk_contains_product foreign key (sku) reference product (sku)
+    constraint fk_contains_orders foreign key (order_no) references orders (order_no),
+    constraint fk_contains_product foreign key (sku) references product (sku)
 );
 
 create table supplier
@@ -144,9 +144,9 @@ create table supply_contract
     TIN numeric(16, 0) unique,
     sku numeric(16, 0) unique,
     address varchar(80),
-    constraint fk_supply_contract_supplier foreign key (TIN) reference supplier (TIN),
-    constraint fk_supply_contract_product foreign key (sku) reference product (sku),
-    constraint fk_supply_contract_workplace foreign key (address) reference workplace (address)
+    constraint fk_supply_contract_supplier foreign key (TIN) references supplier (TIN),
+    constraint fk_supply_contract_product foreign key (sku) references product (sku),
+    constraint fk_supply_contract_workplace foreign key (address) references workplace (address)
 );
 
 create table delivery
@@ -154,13 +154,13 @@ create table delivery
     address varchar(80),
     sku numeric(16, 0) unique,
     TIN numeric(16, 0) unique,
-    constraint fk_delivery_supplier foreign key (TIN) reference supplier (TIN),
-    constraint fk_delivery_workplace foreign key (address) reference workplace (address),
-    constraint fk_delivery_product foreign key (sku) reference product (sku)
+    constraint fk_delivery_supplier foreign key (TIN) references supplier (TIN),
+    constraint fk_delivery_workplace foreign key (address) references workplace (address),
+    constraint fk_delivery_product foreign key (sku) references product (sku)
 );
 
 create table EAN_product 
 (
     sku numeric(16, 0) unique,
-    constraint fk_EAN_product_product foreign key (sku) reference product (sku)
+    constraint fk_EAN_product_product foreign key (sku) references product (sku)
 );
