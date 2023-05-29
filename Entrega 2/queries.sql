@@ -3,7 +3,7 @@
     above 50 in the year 2023 
 */
 
-SELECT DISTINCT customer_name
+SELECT DISTINCT name
 FROM customer
     JOIN places USING (cust_no)
     JOIN orders USING (order_no)
