@@ -176,4 +176,3 @@ INSERT INTO delivery VALUES ('123 Oak Ave', 'HEL-CAN-XXL-90');
 INSERT INTO delivery VALUES ('123 Oak Ave', 'BUB-MCH-LRG-75');
 INSERT INTO delivery VALUES ('987 Maple Rd', 'PIN-PAP-FLP-50');
 INSERT INTO delivery VALUES ('6 Pine Ln', 'CUP-PAP-USA-25');
-

@@ -156,10 +156,9 @@ create table delivery
 (
     address varchar(80) not null,
     sku varchar(15) not null,
-    TIN numeric(16, 0) not null,
-    constraint fk_delivery_supplier foreign key (TIN) references supplier (TIN),
+    constraint pk_delivery primary key (address, sku),
     constraint fk_delivery_warehouse foreign key (address) references warehouse (address),
-    constraint fk_delivery_product foreign key (sku) references product (sku)
+    constraint fk_delivery_supply_contract foreign key (sku) references supply_contract (sku)
 );
 
 create table EAN_product 
