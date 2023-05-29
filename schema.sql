@@ -46,7 +46,6 @@ create table places
 create table sale
 (
     order_no numeric(16, 0) not null unique,
-    constraint pk_sale primary key (order_no),
     constraint fk_sale_order foreign key (order_no) references orders (order_no)
 );
 
@@ -72,6 +71,7 @@ create table process
 (
     ssn numeric(16, 0) not null unique,
     order_no numeric(16, 0) not null unique,
+    constraint pk_process primary key (order_no),
     constraint fk_process_employee foreign key (ssn) references employee (ssn),
     constraint fk_process_orders foreign key (order_no) references orders (order_no)
 );
@@ -96,6 +96,7 @@ create table works
     ssn numeric(16, 0) not null unique,
     name varchar(80) not null,
     address varchar(80) not null,
+    constraint pk_works primary key (ssn),
     constraint fk_works_employee foreign key (ssn) references employee (ssn),
     constraint fk_works_department foreign key (name) references department (name),
     constraint fk_works_workplace foreign key (address) references workplace (address)
@@ -104,7 +105,7 @@ create table works
 
 create table office
 (
-    address varchar(80) not null unique,
+    address varchar(80) not null,
     constraint fk_office_workplace foreign key (address) references workplace (address)
 );
 
@@ -125,9 +126,10 @@ create table product
 
 create table contains
 (
-    order_no numeric(16, 0) not null unique,
+    order_no numeric(16, 0) not null,
     sku varchar(15) not null,
-    qty numeric(16, 0) not null ,
+    qty numeric(16, 0) not null,
+    constraint pk_contains primary key (order_no, sku),
     constraint fk_contains_orders foreign key (order_no) references orders (order_no),
     constraint fk_contains_product foreign key (sku) references product (sku)
 );
@@ -145,6 +147,7 @@ create table supply_contract
     TIN numeric(16, 0) not null,
     sku varchar(15) not null,
     sp_date date not null,
+    constraint pk_supply_contract primary key (sku),
     constraint fk_supply_contract_supplier foreign key (TIN) references supplier (TIN),
     constraint fk_supply_contract_product foreign key (sku) references product (sku)
 );
@@ -155,7 +158,7 @@ create table delivery
     sku varchar(15) not null,
     TIN numeric(16, 0) not null,
     constraint fk_delivery_supplier foreign key (TIN) references supplier (TIN),
-    constraint fk_delivery_workplace foreign key (address) references workplace (address),
+    constraint fk_delivery_warehouse foreign key (address) references warehouse (address),
     constraint fk_delivery_product foreign key (sku) references product (sku)
 );
 
