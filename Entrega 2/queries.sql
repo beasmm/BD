@@ -51,7 +51,7 @@ WHERE sku IN (
     SELECT sku
     FROM contains
     GROUP BY sku
-    GROUP BY SUM(quantity) > ALL (
+    GROUP BY SUM(qty) > ALL (
         FROM contains
         GROUP BY sku
     )
