@@ -1,0 +1,10 @@
+INSERT INTO customer VALUES (1, 'John Smith', 'johnsmith@mail', '1234567890', '123 Main St');
+INSERT INTO customer VALUES (2, 'Alice Johnson', 'alicejohnson@mail', '9876543210', '456 Elm St');
+INSERT INTO customer VALUES (3, 'Michael Brown', 'michaelbrown@mail', '5551234567', '789 Oak Ave');
+INSERT INTO customer VALUES (4, 'Emily Davis', 'emilydavis@mail', '3219876543', '987 Maple Rd');
+INSERT INTO customer VALUES (5, 'Daniel Wilson', 'danielwilson@mail', '8885551234', '654 Pine Ln');
+INSERT INTO customer VALUES (6, 'Sophia Martinez', 'sophiamartinez@mail', '2468135790', '369 Cedar Dr');
+INSERT INTO customer VALUES (7, 'Liam Anderson', 'liamanderson@mail', '7779998888', '852 Birch Rd');
+INSERT INTO customer VALUES (8, 'Olivia Taylor', 'oliviataylor@mail', '1112223333', '741 Willow Ave');
+INSERT INTO customer VALUES (9, 'James Thomas', 'jamesthomas@mail', '4447771111', '963 Spruce St');
+INSERT INTO customer VALUES (10, 'Isabella Clark', 'isabellaclark@mail', '9998887777', '258 Oakwood Dr');
